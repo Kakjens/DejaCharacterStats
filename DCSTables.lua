@@ -560,8 +560,7 @@ DCS_TableData.StatData.VERSATILITY_RATING = {
 		if ( unit ~= "player" ) then
 			statFrame:Hide();
 			return;
-		end
-		local versatility = GetCombatRating(CR_VERSATILITY_DAMAGE_DONE);
+		end		local versatility = GetCombatRating(CR_VERSATILITY_DAMAGE_DONE);
 		local versatilityDamageBonus = GetCombatRatingBonus(CR_VERSATILITY_DAMAGE_DONE) + GetVersatilityBonus(CR_VERSATILITY_DAMAGE_DONE);
 		--local versatilityDamageTakenReduction = GetCombatRatingBonus(CR_VERSATILITY_DAMAGE_TAKEN) + GetVersatilityBonus(CR_VERSATILITY_DAMAGE_TAKEN);
 		PaperDollFrame_SetLabelAndText(statFrame, "Versatility Rating", versatility, false, versatility);
@@ -601,7 +600,7 @@ DCS_TableData.StatData.MASTERY_RATING = {
 		PaperDollFrame_SetLabelAndText(statFrame, "", dcs_format(color_format,rating), false, rating);
 		statFrame.Label:SetText(color_rating2)
 
-		statFrame.tooltip = HIGHLIGHT_FONT_COLOR_CODEe..color_rating1.." "..format(color_format,rating)..add_text..FONT_COLOR_CODE_CLOSE;
+		statFrame.tooltip = HIGHLIGHT_FONT_COLOR_CODE..color_rating1.." "..format(color_format,rating)..add_text..FONT_COLOR_CODE_CLOSE;
 		statFrame.tooltip2 = format("Mastery Rating of %s increases mastery by %.2f%%", BreakUpLargeNumbers(rating), percentage);
 	
 		statFrame:Show();
